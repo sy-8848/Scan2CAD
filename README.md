@@ -1,6 +1,6 @@
 # Scan2CAD
 
-Scan2CAD converts black-and-white scanned PDF drawings into CAD-friendly DXF files.
+Scan2CAD converts black-and-white bitmap-scanned PDF drawings into CAD-friendly DXF files.
 
 The pipeline is tuned for architectural or engineering scans where long curves and
 walls are often broken into many tiny straight fragments by raster tracing.
@@ -27,7 +27,7 @@ Important options:
 
 ## How short segments become complete curves
 
-1. Each PDF page is rasterized at the requested DPI.
+1. Each PDF page is rasterized at the requested DPI; embedded PDF vectors are ignored.
 2. The image is binarized and thinned to a one-pixel skeleton.
 3. Skeleton pixels are traced into ordered polylines.
 4. Nearby open endpoints are chained when their directions are compatible.
